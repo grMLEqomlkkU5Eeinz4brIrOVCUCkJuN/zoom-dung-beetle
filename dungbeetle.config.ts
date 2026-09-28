@@ -8,10 +8,12 @@ import type { GeneratorConfig } from "./tools/generator/config.js";
  * in `src/resources/users.ts` before replacing it.
  */
 const config: GeneratorConfig = {
-	spec: "./tests/generator/fixtures/users.yaml",
+	spec: "https://developers.zoom.us/api-specs/zoom-api/methods/ZoomMeetingAPI-spec.json",
 
 	// Names the path rules read wrongly, and two endpoints that would collide.
-	names: {},
+	names: {
+		"PUT /meetings/{meetingUUID}/recordings/status": "recoverMeetingRecordings",
+	},
 };
 
 export default config;

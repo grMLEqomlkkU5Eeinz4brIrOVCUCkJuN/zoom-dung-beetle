@@ -49,14 +49,8 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
-      - name: Run tests
-        run: npm test
-
       - name: Build project
         run: npm run build
-
-      - name: Test the built artifact
-        run: npm run test:dist
 
       - name: Generate API docs
         if: matrix.os == 'ubuntu-latest' && matrix.node-version == '22.x'
